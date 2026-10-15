@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14061f">
+<title>Something I needed to say 💌</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600&family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:#14061f;color:#fff1f5;font-family:'Quicksand',system-ui,sans-serif;overflow:hidden;color-scheme:dark;-webkit-tap-highlight-color:transparent}
+.sky{position:fixed;inset:0;background:radial-gradient(70% 55% at 50% 40%,#2c1245,transparent),radial-gradient(60% 40% at 50% 110%,#5a1a3a88,transparent),#14061f}
+.star{position:fixed;width:3px;height:3px;border-radius:50%;background:#fff;opacity:0;animation:tw 4s ease-in-out infinite}
+@keyframes tw{50%{opacity:.9}}
+.stage{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;transition:opacity 1.6s;z-index:2}
+.stage.gone{opacity:0;pointer-events:none}
+.ttl{font-family:'Dancing Script',cursive;font-weight:600;font-size:clamp(30px,8.4vw,44px);color:#ffd98a;text-shadow:0 0 24px rgba(255,200,120,.35);text-align:center}
+.env{position:relative;width:min(86vw,430px);aspect-ratio:3/2;margin:34px 0 36px;perspective:900px;filter:drop-shadow(0 26px 40px rgba(0,0,0,.6));animation:hov 5s ease-in-out infinite}
+@keyframes hov{50%{transform:translateY(-8px)}}
+.eb{position:absolute;inset:0;border-radius:10px;background:linear-gradient(160deg,#ead0bc,#d6b49c)}
+.tex{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .35 0 0 0 0 .25 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E")}
+.pp{position:absolute;left:6%;right:6%;top:8%;height:80%;background:#fbf3e4;border-radius:6px;z-index:1;transition:transform 1.1s cubic-bezier(.3,.8,.3,1) .7s;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.front{position:absolute;inset:0;border-radius:10px;z-index:2;background:linear-gradient(160deg,#efd7c4,#d9b8a0);clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%)}
+.flap{position:absolute;left:0;right:0;top:0;height:62%;z-index:3;transform-origin:top;background:linear-gradient(180deg,#e6c9b4,#ddbca5);clip-path:polygon(0 0,100% 0,50% 96%);border-radius:10px 10px 0 0;transition:transform .95s ease .25s,z-index 0s .6s}
+.seal{position:absolute;left:50%;top:55%;width:15%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;z-index:5;background:radial-gradient(circle at 35% 30%,#e65a4e,#a01f1b 60%,#6f1010);box-shadow:inset 0 0 0 4px rgba(255,255,255,.13),0 5px 12px rgba(0,0,0,.45);display:grid;place-items:center;color:rgba(255,210,200,.8);font-size:clamp(14px,4vw,22px);transition:all .5s ease}
+.rosec{position:absolute;right:-7%;top:-16%;font-size:clamp(60px,17vw,88px);z-index:6;filter:drop-shadow(0 6px 10px rgba(0,0,0,.4));animation:sway 4s ease-in-out infinite;transform-origin:bottom left}
+@keyframes sway{50%{transform:rotate(6deg)}}
+.to{position:absolute;left:0;right:0;bottom:8%;z-index:4;text-align:center;font-family:'Dancing Script',cursive;font-size:clamp(20px,5.6vw,28px);color:#6b4a3e;display:flex;justify-content:center;align-items:baseline;gap:8px}
+.to input{width:55%;background:transparent;border:0;border-bottom:1px dashed #a07d6c;color:#3a2218;font:700 clamp(22px,6vw,30px) 'Dancing Script',cursive;text-align:center;outline:none;padding:0 4px}
+.to input::placeholder{color:#b49585;font-weight:500}
+.open .flap{transform:rotateX(180deg);z-index:0}
+.open .pp{transform:translateY(-46%)}
+.open .seal{transform:translate(-50%,-50%) scale(1.7);opacity:0}
+.track{position:relative;width:min(86vw,430px);height:66px;border-radius:40px;border:1px solid rgba(255,217,160,.4);background:rgba(255,255,255,.05);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:0 0 30px rgba(255,200,120,.12);overflow:hidden;touch-action:none;user-select:none}
+.track .lb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-left:56px;font-family:'Dancing Script',cursive;font-size:clamp(20px,5.4vw,26px);color:#ffd98a;transition:opacity .2s}
+.knob{position:absolute;left:6px;top:6px;width:52px;height:52px;font-size:44px;line-height:52px;text-align:center;cursor:grab;touch-action:none;filter:drop-shadow(0 0 10px rgba(255,120,160,.6))}
+.knob.back{transition:transform .4s}
+/* letter */
+.lscene{position:fixed;inset:0;z-index:3;overflow-y:auto;overflow-x:hidden;display:flex;flex-direction:column;align-items:center;padding:7vh 16px 220px;opacity:0;pointer-events:none;transition:opacity 1.8s;background:radial-gradient(ellipse at 50% 25%,#8a0f22,#46071a 50%,#14020b)}
+.lscene.on{opacity:1;pointer-events:auto}
+.paper{position:relative;z-index:2;width:min(92vw,520px);padding:50px 30px 56px;background:linear-gradient(170deg,#f7eddb,#eadcc0);color:#6a1620;box-shadow:0 20px 60px rgba(0,0,0,.6);font-family:'Dancing Script',cursive;font-weight:600;text-align:center}
+.paper p{font-size:clamp(18px,4.8vw,23px);line-height:1.65;margin-bottom:18px}
+.paper .hd{font-size:clamp(25px,7vw,34px);line-height:1.25;color:#8c1224;font-weight:700}
+.paper .dear{font-size:clamp(20px,5.4vw,26px);text-align:left;color:#7a2a34}
+.ur{font-family:'Noto Nastaliq Urdu',serif!important;font-weight:600;font-size:clamp(22px,6vw,30px)!important;line-height:2.3!important;color:#8c1224;margin-top:6px}
+.sig{font-size:clamp(20px,5.4vw,26px)!important;text-align:right;margin-top:12px}
+.l{opacity:0;transform:translateY(14px);filter:blur(4px);transition:all 1.4s ease}.l.in{opacity:1;transform:none;filter:none}
+.kiss{position:absolute;left:14px;bottom:10px;font-size:46px;opacity:.5;transform:rotate(-18deg);filter:saturate(1.3)}
+.deco{position:fixed;z-index:4;pointer-events:none;filter:drop-shadow(0 8px 14px rgba(0,0,0,.55));animation:sway 5s ease-in-out infinite}
+.d1{top:-6px;left:-10px;font-size:clamp(64px,18vw,96px);transform-origin:top left}
+.d2{bottom:-34px;left:50%;margin-left:-70px;font-size:140px;transform-origin:bottom center}
+.d3{bottom:22%;left:8px;font-size:34px;animation:flut 3s ease-in-out infinite}
+.d4{top:8%;right:6px;font-size:54px;transform-origin:top right}
+@keyframes flut{50%{transform:translate(14px,-18px) rotate(14deg)}}
+.petal{position:fixed;top:-30px;z-index:5;pointer-events:none;width:13px;height:17px;border-radius:80% 0 80% 0;background:radial-gradient(circle at 30% 30%,#ff5a6e,#a50f27);opacity:.9;animation:fall linear forwards}
+@keyframes fall{to{transform:translate(var(--dx),110vh) rotate(var(--r))}}
+.btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:26px;position:relative;z-index:6}
+.btn{border:1px solid rgba(255,217,160,.5);cursor:pointer;font:600 15px 'Quicksand',sans-serif;color:#ffe6c0;background:rgba(0,0,0,.28);padding:12px 26px;border-radius:30px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.mute{position:fixed;right:14px;top:calc(12px + env(safe-area-inset-top,0px));z-index:10;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,194,214,.4);background:rgba(0,0,0,.3);color:#fff1f5;font-size:19px;cursor:pointer;display:none}
+.ytp{position:fixed;left:0;bottom:0;width:2px;height:2px;opacity:.01;pointer-events:none}
+</style>
+</head>
+<body>
+<div class="sky" id="sky"></div>
+<button class="mute" id="mute" title="Music">♪</button>
+<div id="yt1" class="ytp"></div><div id="yt2" class="ytp"></div>
+
+<section class="stage" id="stage">
+  <h1 class="ttl">Something I needed to say</h1>
+  <div class="env" id="env">
+    <div class="eb tex"></div>
+    <div class="pp"></div>
+    <div class="front tex"></div>
+    <div class="flap tex"></div>
+    <div class="seal">♥</div>
+    <div class="rosec">🌹</div>
+    <div class="to"><span>To:</span><input id="to" type="text" maxlength="24" placeholder="your name" autocomplete="off"></div>
+  </div>
+  <div class="track" id="track"><div class="lb" id="lb">Slide the rose to open →</div><div class="knob" id="knob">🌹</div></div>
+</section>
+
+<section class="lscene" id="ls">
+  <div class="paper tex" id="paper">
+    <p class="l dear" id="dear"></p>
+    <p class="l hd">You are the best thing ever happened to me!</p>
+    <p class="l">Thank you for being the most loved and cherished person in my life. You don't know how much I’ve remember you. I’ve always found myself drifting towards you, just like water is drawn towards the moon. You Bella dame, merci a beautiful sight of my life. I wish to always have you in the escape of life and remember, no one could ever love you in exactly the way I do, with all the heart and care I hold for you.</p>
+    <p class="l">You are one of the most wonderful, respectful, caring, and curious people I’ve ever known. You make me feel alive, just like rain brings life back to a watered-down world. There is something about you that makes me like how I want to be!</p>
+    <p class="l ur" lang="ur" dir="rtl">تیری آنکھوں سے ہے سویرا جہاں میں۔</p>
+    <p class="l sig" id="sig"></p>
+    <span class="kiss">💋</span>
+  </div>
+  <div class="btns"><button class="btn" id="close">Close the letter ✉</button></div>
+  <div class="deco d1">🌹🌿</div><div class="deco d2">🌹</div><div class="deco d3">🦋</div><div class="deco d4">🌿</div>
+</section>
+
+<script>
+// ===== SETTINGS (edit these four lines) =====
+// Song BEFORE the letter opens ("You and I"): paste a YouTube link, or upload an mp3 with this file name
+const SONG_BEFORE_LINK='';
+const SONG_BEFORE_FILE='you-and-i.mp3';
+// Song AFTER the letter opens ("Cross My Heart, Hope to Die"): paste a YouTube link, or upload an mp3 with this file name
+const SONG_AFTER_LINK='https://youtube.com/shorts/MJ3QWG4p744';
+const SONG_AFTER_FILE='cross-my-heart.mp3';
+// ============================================
+const $=id=>document.getElementById(id);
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const P=new URLSearchParams(location.hash.slice(1)),FROM=(P.get('from')||'').slice(0,30);
+$('to').value=(P.get('to')||'').slice(0,24);
+
+for(let i=0;i<36;i++){const s=document.createElement('i');s.className='star';s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*4}s;transform:scale(${.5+Math.random()*1.2})`;$('sky').appendChild(s)}
+
+// ---- soft ambient music ----
+let ctx,master,muted=false,beat=0,next=0,opened=false;
+const chords=[[220,261.63,329.63],[174.61,220,261.63],[261.63,329.63,392],[196,246.94,293.66]],pat=[0,1,2,1,2,1,0,2];
+function tone(f,t,d,type,v){const o=ctx.createOscillator(),g=ctx.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.03);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.1)}
+function sched(){while(next<ctx.currentTime+1){const ch=chords[(beat/8|0)%4],b=beat%8;if(b===0){ch.forEach(f=>tone(f,next,5.4,'sine',.05));tone(ch[0]/2,next,5.2,'sine',.09)}
+ tone(ch[pat[b]]*2,next,1.9,'triangle',.07);next+=.62;beat++}}
+function startAmbient(){if(ctx)return;ctx=new (window.AudioContext||window.webkitAudioContext)();master=ctx.createGain();master.gain.value=.5;
+ const cv=ctx.createConvolver(),len=ctx.sampleRate*3,buf=ctx.createBuffer(2,len,ctx.sampleRate);
+ for(let k=0;k<2;k++){const d=buf.getChannelData(k);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2.5)}
+ cv.buffer=buf;const w=ctx.createGain();w.gain.value=.7;master.connect(ctx.destination);master.connect(cv);cv.connect(w);w.connect(ctx.destination);
+ next=ctx.currentTime+.2;setInterval(sched,250);sched();$('mute').style.display='block'}
+function firstGesture(){startAmbient();if(!opened)setMusic('before')}
+['pointerup','keydown'].forEach(e=>addEventListener(e,firstGesture,{once:true}));
+function amb(v,t=2){if(!master)return;master.gain.cancelScheduledValues(ctx.currentTime);master.gain.setValueAtTime(master.gain.value,ctx.currentTime);master.gain.linearRampToValueAtTime(v,ctx.currentTime+t)}
+
+// ---- the two songs ----
+const idOf=u=>(u.match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([\w-]{11})/)||[])[1];
+function mk(link,file){const t={id:idOf(link),yt:null,ready:false,au:null};if(!t.id&&file){t.au=new Audio(file);t.au.loop=true;t.au.preload='auto'}return t}
+const tb=mk(SONG_BEFORE_LINK,SONG_BEFORE_FILE),ta=mk(SONG_AFTER_LINK,SONG_AFTER_FILE);
+if(tb.id||ta.id){const sc=document.createElement('script');sc.src='https://www.youtube.com/iframe_api';document.head.appendChild(sc);
+ window.onYouTubeIframeAPIReady=()=>{[[tb,'yt1'],[ta,'yt2']].forEach(([t,el])=>{if(t.id)t.yt=new YT.Player(el,{width:'2',height:'2',videoId:t.id,playerVars:{playsinline:1,controls:0,rel:0,loop:1,playlist:t.id,disablekb:1},events:{onReady:()=>{t.ready=true}}})})}}
+async function playTrack(t){
+ if(t.ready){t.yt.setVolume(90);t.yt.playVideo();await sleep(2500);return t.yt.getPlayerState()===1}
+ if(t.au){try{t.au.volume=0;await t.au.play();let v=0;const i=setInterval(()=>{v=Math.min(.95,v+.05);t.au.volume=v;if(v>=.95)clearInterval(i)},150);return true}catch(e){return false}}
+ return false}
+function stopTrack(t){if(t.ready)t.yt.pauseVideo();if(t.au)t.au.pause()}
+let mtok=0;
+async function setMusic(which){const my=++mtok,cur=which==='before'?tb:ta,oth=which==='before'?ta:tb;
+ stopTrack(oth);const ok=await playTrack(cur);if(my!==mtok)return;amb(ok?0:(which==='before'?.5:.7),2.5)}
+$('mute').onclick=()=>{muted=!muted;$('mute').textContent=muted?'✕':'♪';
+ if(muted){ctx&&ctx.suspend();stopTrack(tb);stopTrack(ta)}else{ctx&&ctx.resume();setMusic(opened?'after':'before')}};
+
+// ---- slide the rose ----
+const track=$('track'),knob=$('knob');let drag=false,sx=0,prog=0;
+const maxX=()=>track.clientWidth-knob.clientWidth-12;
+knob.addEventListener('pointerdown',e=>{drag=true;sx=e.clientX;knob.classList.remove('back');knob.setPointerCapture(e.pointerId)});
+knob.addEventListener('pointermove',e=>{if(!drag)return;const x=Math.max(0,Math.min(maxX(),e.clientX-sx));prog=x/maxX();knob.style.transform=`translateX(${x}px) rotate(${prog*200}deg)`;$('lb').style.opacity=1-prog*1.4});
+function release(){if(!drag)return;drag=false;if(prog>.78){knob.style.transform=`translateX(${maxX()}px) rotate(200deg)`;openEnv()}else{knob.classList.add('back');knob.style.transform='';$('lb').style.opacity=1;prog=0}}
+knob.addEventListener('pointerup',release);knob.addEventListener('pointercancel',release);
+
+// ---- petals ----
+let pet=null;
+function petal(){const p=document.createElement('span');p.className='petal';p.style.cssText=`left:${Math.random()*100}%;animation-duration:${7+Math.random()*6}s;--dx:${(Math.random()-.5)*200}px;--r:${Math.random()*720}deg;transform:scale(${.6+Math.random()*.9})`;document.body.appendChild(p);setTimeout(()=>p.remove(),14000)}
+function torn(){const t=[],b=[];for(let x=0;x<=100;x+=2.5){t.push(`${x}% ${(Math.random()*1.1).toFixed(2)}%`);b.push(`${100-x}% ${(100-Math.random()*1.1).toFixed(2)}%`)}$('paper').style.clipPath=`polygon(${t.join(',')},${b.join(',')})`}
+
+async function openEnv(){
+ if(opened)return;opened=true;startAmbient();setMusic('after');
+ $('env').classList.add('open');$('env').style.animation='none';
+ await sleep(2500);
+ const n=$('to').value.trim();$('dear').textContent=n?`Dear ${n},`:'';$('dear').style.display=n?'':'none';
+ $('sig').textContent=FROM?`With all my heart, ${FROM} ♥`:'With all my heart ♥';
+ torn();$('stage').classList.add('gone');$('ls').classList.add('on');$('ls').scrollTop=0;
+ pet=setInterval(petal,500);
+ const ls=[...document.querySelectorAll('.l')].filter(e=>e.style.display!=='none');
+ ls.forEach((el,i)=>setTimeout(()=>el.classList.add('in'),1200+i*1500))}
+$('close').onclick=()=>{opened=false;clearInterval(pet);document.querySelectorAll('.l').forEach(e=>e.classList.remove('in'));
+ $('ls').classList.remove('on');$('stage').classList.remove('gone');$('env').classList.remove('open');$('env').style.animation='';
+ knob.classList.add('back');knob.style.transform='';$('lb').style.opacity=1;prog=0;setMusic('before')};
+</script>
+</body>
+</html>
